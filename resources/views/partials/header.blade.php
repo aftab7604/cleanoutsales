@@ -4,7 +4,7 @@
     <div class="top-bar">
       <div class="container">
         <div class="row">
-          <div class="col-lg-7 col-md-8 col-xs-12">
+          <div class="col-lg-7 col-md-8 col-xs-12" style="height: 42px !important">
             <!-- Start Contact Info -->
             <ul class="links clearfix">
               <li><i class="lni-phone-handset"></i>813-530-8544</li>
@@ -36,23 +36,23 @@
             <span class="navbar-toggler-icon"></span>
             <span class="lin-menu"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="assets/img/logo1.png" alt="" style="height: 50px; width:auto;" ></a>
+          <a class="navbar-brand" href="index.html"><img src="assets/img/logo1.png" alt="" style="height: 75px; width:auto;" ></a>
         </div>
 
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto w-100 justify-content-center">
             <li class="nav-item dropdown @if(Route::is('index')) active @endif">
-              <a class="nav-link dropdown-toggle" href="{{route('index')}}" >
-                Find Sales
+              <a class="nav-link" href="{{route('index')}}" >
+                Find Estate Sales
               </a>
             </li>
             <li class="nav-item dropdown @if(Route::is('shop')) active @endif">
-              <a class="nav-link dropdown-toggle" href="{{route('shop')}}" >
+              <a class="nav-link" href="{{route('shop')}}" >
                 Shop
               </a>
             </li>
             <li class="nav-item dropdown @if(Route::is('hire-company')) active @endif" href="{{route('shop')}}">
-              <a class="nav-link dropdown-toggle" href="{{route('hire-company')}}" >
+              <a class="nav-link" href="{{route('hire-company')}}" >
                 Hire a Company
               </a>
             </li>
@@ -60,8 +60,8 @@
           <div class="search-add float-right">
             <form method="get" action="{{route('search.result')}}">
               <div class="form-group">
-                  <input type="search" name="field-name" value="" placeholder="Search Here" required="">
                   <button type="submit" class="search-btn"><span class="lni-search"></span></button>
+                  <input type="search" name="field-name" value="" placeholder="Search Here" required="">
               </div>
             </form>
           </div>

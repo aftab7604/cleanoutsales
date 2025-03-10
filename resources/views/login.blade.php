@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Login')
 @section('content')
     {{-- <!-- Page Banner Start -->
     <div id="page-banner-area" class="page-banner">
