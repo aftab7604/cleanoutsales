@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Search')
 @section('content')
     {{-- <!-- Main Carousel Section Start -->
     <div id="main-slide" class="carousel slide" data-ride="carousel">

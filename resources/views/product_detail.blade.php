@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Details')
 @section('content')
     {{-- <!-- Page Banner Start -->
     <div id="page-banner-area" class="page-banner">
@@ -300,9 +301,8 @@
 }
 
 .call-to-action-card .card{
-    background-color: #21416a;
+    background-color: #F1B648;
     font-family: montserratmedium, Helvetica, Arial, Lucida Grande, sans-serif;
 }
-
 </style>
 @endsection
