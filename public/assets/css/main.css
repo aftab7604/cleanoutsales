@@ -3629,11 +3629,6 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   color: #dc3545 !important;
 }
 
-.text-danger {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
 .heading {
   margin-bottom: 30px;
 }
@@ -3682,7 +3677,6 @@ textarea {
 }
 
 .page-login-form .login-form .form-control {
-  padding-left: 62px;
   position: relative;
 }
 

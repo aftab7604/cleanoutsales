@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Clean Out') | EstateBit Real Estate Theme Bootstrap HTML5 Template</title>
 
@@ -27,12 +28,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
     <!-- Main Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Tweaks -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tweaks.css">
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
     @yield('styles')
-
+    <script>
+      window.APP_URL = "{{ env('APP_URL') }}";
+    </script>
   </head>
   <body>
 
@@ -80,6 +85,11 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
+
+    <!-- Util Scripts -->
+    <script src="assets/js/utils/postalcode.js"></script>
+    <script src="assets/js/utils/utilLib.js"></script>
+    
     @yield('scripts')
   </body>
 </html>

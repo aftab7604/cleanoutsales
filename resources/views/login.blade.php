@@ -23,24 +23,32 @@
                         <h3>
                             Login
                         </h3>
-                        <form class="login-form">
+                        <form action="{{ route('authenticate') }}" id="loginForm" class="login-form" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <div class="input-icon">
-                                    <i class="lni-user"></i>
-                                    <input type="text" id="sender-email" class="form-control" name="email"
-                                        placeholder="Username">
+                                <label id="emailLabel" for="email">Email Address *</label>
+                                <input type="text" id="email" class="form-control" name="email"
+                                    placeholder="Email Address *">
+                                <small id="emailHelp"></small>
+                                @if ($errors->has('email'))
+                                    <small id="emailError" class="text-danger">{{ $errors->first('email') }}</small>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label id="passwordLabel" for="password">Password *</label>
+                                <div class="input-group">
+                                    <input id="password" type="password" class="form-control" placeholder="Password *" name="password">
+                                    <div class="input-group-append">
+                                        <button id="toggleShowPassword" class="btn btn-outline-warning"
+                                            type="button">SHOW</button>
+                                    </div>
                                 </div>
+                                <small id="passwordHelp"></small>
+                                @if ($errors->has('password'))
+                                    <small id="passwordError" class="text-danger">{{ $errors->first('password') }}</small>
+                                @endif
                             </div>
-                            <div class="form-group">
-                                <div class="input-icon">
-                                    <i class="lni-lock"></i>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="rememberme" value=""> Keep Me Signed In
-                            </div>
-                            <button class="btn btn-common log-btn">Submit</button>
+                            <button type="submit" class="btn btn-common log-btn">Submit</button>
                         </form>
                         <ul class="form-links">
                             <li class="text-center"><a href="{{route('register')}}">Don't have an account?</a></li>
@@ -51,4 +59,8 @@
         </div>
     </section>
     <!-- Content section End -->
+@endsection
+
+@section('scripts')
+    <script src="assets/js/scripts/login.js"></script>
 @endsection

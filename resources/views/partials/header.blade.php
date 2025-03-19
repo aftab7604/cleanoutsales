@@ -18,9 +18,18 @@
               <a class="facebook" href="https://www.facebook.com/cleanoutapp"><i class="lni-facebook-filled"></i></a>
               <a class="instagram" href="https://www.instagram.com/cleanoutapp"><i class="lni-instagram-filled"></i></a>
             </div>
+            @guest
             <div class="header-top-right float-right">
               <a href="{{route('login')}}" class="header-top-button"><i class="lni-lock"></i> Log In</a>
             </div>
+            @else
+            <div class="header-top-right float-right">
+              <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="header-top-button"><i class="lni-exit"></i> Logout</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+              </form>
+            </div>
+            @endguest
           </div>
         </div>
       </div>
@@ -36,7 +45,7 @@
             <span class="navbar-toggler-icon"></span>
             <span class="lin-menu"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="assets/img/logo1.png" alt="" style="height: 75px; width:auto;" ></a>
+          <a class="navbar-brand" href="/"><img src="assets/img/logo1.png" alt="" style="height: 75px; width:auto;" ></a>
         </div>
 
         <div class="collapse navbar-collapse" id="main-navbar">
