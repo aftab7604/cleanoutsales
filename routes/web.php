@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('index');
-})->name('index');
 
 Route::get('/shop', function () {
     return view('shop');
@@ -21,14 +21,6 @@ Route::get('/hire-company', function () {
 Route::get('/Pricing', function () {
     return view('pricing');
 })->name('pricing');
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
 
 Route::get('/faqs', function () {
     return view('faqs');
@@ -50,3 +42,21 @@ Route::get('/search-result', function () {
     return view('search-result');
 })->name('search.result');
 
+// Home routes
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
+// Registeration routes
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+
+// Login routes
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Verification routes
+Route::controller(VerificationController::class)->group(function () {
+    Route::get('/email/verify', 'notice')->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', 'verify')->name('verification.verify');
+    Route::post('/email/resend', 'resend')->name('verification.resend');
+});
