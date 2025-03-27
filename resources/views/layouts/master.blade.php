@@ -33,7 +33,7 @@
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     @yield('styles')
     <script>
       window.APP_URL = "{{ env('APP_URL') }}";
@@ -89,7 +89,7 @@
     <!-- Util Scripts -->
     <script src="assets/js/utils/postalcode.js"></script>
     <script src="assets/js/utils/utilLib.js"></script>
-    
+
     @yield('scripts')
   </body>
 </html>

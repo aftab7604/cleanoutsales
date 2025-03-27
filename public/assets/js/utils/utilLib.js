@@ -24,7 +24,16 @@ const InputType = {
     Focus: "focus",
     Unfocus: "blur",
     Submit: "submit",
-    Click: "click"
+    Click: "click",
+    Change: "change"
+}
+
+const CheckType = {
+    Checked: ":checked"
+}
+
+const PropType = {
+    Checked: "checked"
 }
 
 const MethodTypes = {
